@@ -1,0 +1,81 @@
+SalePrice - the property's sale price in dollars. This is the target variable that you're trying to predict.
+
+MSSubClass: The building class 建筑类型
+MSZoning: The general zoning classification 分区分类
+LotFrontage: Linear feet of street connected to property 道路到房子的直线距离
+LotArea: Lot size in square feet 地段大小
+Street: Type of road access 房子周围道路类型
+Alley: Type of alley access 出入通道类型
+LotShape: General shape of property 房子形状
+LandContour: Flatness of the property 房屋平整度
+Utilities: Type of utilities available 公共设施
+LotConfig: Lot configuration
+LandSlope: Slope of property 房子坡度
+Neighborhood: Physical locations within Ames city limits 在市区的位置
+Condition1: Proximity to main road or railroad 接近主要交通道路或者枢纽程度
+Condition2: Proximity to main road or railroad (if a second is present)
+BldgType: Type of dwelling 住宅类型
+HouseStyle: Style of dwelling 房子风格
+OverallQual: Overall material and finish quality 整体材料和成品质量
+OverallCond: Overall condition rating 总体状况评价
+YearBuilt: Original construction date 建造时间
+YearRemodAdd: Remodel date 重新装修时间
+RoofStyle: Type of roof 屋顶类型
+RoofMatl: Roof material 屋顶材料
+Exterior1st: Exterior covering on house 房屋外墙
+Exterior2nd: Exterior covering on house (if more than one material)
+MasVnrType: Masonry veneer type  砌体饰面型
+MasVnrArea: Masonry veneer area in square feet 方形单板砌体面积
+ExterQual: Exterior material quality 外部材质
+ExterCond: Present condition of the material on the exterior 外观材料的现状
+Foundation: Type of foundation
+BsmtQual: Height of the basement 地下室高度
+BsmtCond: General condition of the basement
+BsmtExposure: Walkout or garden level basement walls
+BsmtFinType1: Quality of basement finished area
+BsmtFinSF1: Type 1 finished square feet
+BsmtFinType2: Quality of second finished area (if present)
+BsmtFinSF2: Type 2 finished square feet
+BsmtUnfSF: Unfinished square feet of basement area
+TotalBsmtSF: Total square feet of basement area
+Heating: Type of heating 取暖方式
+HeatingQC: Heating quality and condition
+CentralAir: Central air conditioning
+Electrical: Electrical system
+1stFlrSF: First Floor square feet 一楼多大
+2ndFlrSF: Second floor square feet
+LowQualFinSF: Low quality finished square feet (all floors)
+GrLivArea: Above grade (ground) living area square feet
+BsmtFullBath: Basement full bathrooms
+BsmtHalfBath: Basement half bathrooms
+FullBath: Full bathrooms above grade 浴室级别
+HalfBath: Half baths above grade
+Bedroom: Number of bedrooms above basement level
+Kitchen: Number of kitchens
+KitchenQual: Kitchen quality
+TotRmsAbvGrd: Total rooms above grade (does not include bathrooms)
+Functional: Home functionality rating
+Fireplaces: Number of fireplaces
+FireplaceQu: Fireplace quality
+GarageType: Garage location 车库位置
+GarageYrBlt: Year garage was built
+GarageFinish: Interior finish of the garage
+GarageCars: Size of garage in car capacity
+GarageArea: Size of garage in square feet
+GarageQual: Garage quality
+GarageCond: Garage condition
+PavedDrive: Paved driveway 车道
+WoodDeckSF: Wood deck area in square feet 没平方英尺使用的木板
+OpenPorchSF: Open porch area in square feet 阳台
+EnclosedPorch: Enclosed porch area in square feet
+3SsnPorch: Three season porch area in square feet
+ScreenPorch: Screen porch area in square feet
+PoolArea: Pool area in square feet
+PoolQC: Pool quality
+Fence: Fence quality 篱笆质量
+MiscFeature: Miscellaneous feature not covered in other categories 杂项功能不包括在其他类别
+MiscVal: $Value of miscellaneous feature
+MoSold: Month Sold
+YrSold: Year Sold
+SaleType: Type of sale
+SaleCondition: Condition of sale
