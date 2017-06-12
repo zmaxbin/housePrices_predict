@@ -82,4 +82,3 @@ submission_df.to_csv('D:/Kaggle/House_prices/data/submission2.csv',columns = ['I
 
 
 
-
