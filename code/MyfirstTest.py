@@ -99,5 +99,3 @@ y_final = np.exp(model_lasso.predict(X_test))
 submission_df = pd.DataFrame(data = {'Id':test_df.index,'SalePrice':y_final})
 submission_df.to_csv('E:/Kaggle/housePrices_predict/data/submission3.csv',columns = ['Id','SalePrice'],index = False)
 
-
-
