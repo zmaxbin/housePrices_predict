@@ -32,10 +32,35 @@ missing_data = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])
 df_train = train_df.drop((missing_data[missing_data['Total'] > 250]).index,1)
 # print df_train.isnull().sum().max()
 
+# corrmat = train_df.corr()
+# print corrmat.nlargest(37,'SalePrice')['SalePrice']
+
+
+#scatter plot grlivarea/saleprice
+# var = 'EnclosedPorch'
+# data = pd.concat([df_train['SalePrice'], df_train[var]], axis=1)
+# data.plot.scatter(x=var, y='SalePrice', ylim=(0,800000))
+# plt.show()
+
 #deleting points
-df_train.sort_values(by = 'GrLivArea', ascending = False)[:2]
-df_train = df_train.drop(df_train[df_train['Id'] == 1299].index)
+# my = df_train.sort_values(by = 'TotalBsmtSF', ascending = False)[:1]
+df_train['BsmtFinSF1'].replace(to_replace=5644,value=df_train['BsmtFinSF1'].mean(),inplace=True)
+df_train['TotalBsmtSF'].replace(to_replace=6110,value=df_train['TotalBsmtSF'].mean(),inplace=True)
+df_train['1stFlrSF'].replace(to_replace=4692,value=df_train['1stFlrSF'].mean(),inplace=True)
+
+df_train['LotArea'].replace(to_replace=215245,value=df_train['LotArea'].mean(),inplace=True)
+df_train['LotArea'].replace(to_replace=164660,value=df_train['LotArea'].mean(),inplace=True)
+df_train['LotArea'].replace(to_replace=159000,value=df_train['LotArea'].mean(),inplace=True)
+df_train['LotArea'].replace(to_replace=115149,value=df_train['LotArea'].mean(),inplace=True)
+
+
+df_train['GrLivArea'].replace(to_replace=5642,value=df_train['GrLivArea'].mean(),inplace=True)
+df_train['GrLivArea'].replace(to_replace=4676,value=df_train['GrLivArea'].mean(),inplace=True)
+
 df_train = df_train.drop(df_train[df_train['Id'] == 524].index)
+# df_train = df_train.drop(df_train[df_train['Id'] == 333].index)
+
+# print df_train.describe().T
 
 # concat函数相当于拼接，拼接方式是增加行数，不增加列数
 all_data = pd.concat((df_train.loc[:,'MSSubClass':'SaleCondition'],
@@ -82,19 +107,8 @@ def rmse_cv(model):
     rmse= np.sqrt(-cross_val_score(model, X_train, y, scoring="neg_mean_squared_error", cv = 5))
     return(rmse)
 
-model_ridge = Ridge()
-
-alphas = [0.05, 0.1, 0.3, 1, 3, 5, 10, 15, 30, 50, 75]
-cv_ridge = [rmse_cv(Ridge(alpha = alpha)).mean()
-            for alpha in alphas]
-
-cv_ridge = pd.Series(cv_ridge, index = alphas)
-cv_ridge.plot(title = "Validation - Just Do It")
-
-
-
 model_lasso = LassoCV(alphas = [1, 0.1, 0.001, 0.0005]).fit(X_train, y)
 y_final = np.exp(model_lasso.predict(X_test))
 submission_df = pd.DataFrame(data = {'Id':test_df.index,'SalePrice':y_final})
-submission_df.to_csv('D:/Kaggle/housePrices_predict/data/submission4.csv',columns = ['Id','SalePrice'],index = False)
+submission_df.to_csv('D:/Kaggle/housePrices_predict/data/submission7.csv',columns = ['Id','SalePrice'],index = False)
 
