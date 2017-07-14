@@ -120,7 +120,7 @@ model_ridge = KernelRidge(alpha=10).fit(X_train,y)
 y_pred_ridge = model_ridge.predict(X_test)
 
 
-
+# 验证曲线寻找最佳参数
 # from sklearn.model_selection import validation_curve
 # from sklearn.pipeline import Pipeline
 # from sklearn.linear_model import Lasso
@@ -169,7 +169,6 @@ y_pred_ridge = model_ridge.predict(X_test)
 # plt.tight_layout()
 # # plt.savefig('./figures/validation_curve.png', dpi=300)
 # plt.show()
-
 
 
 import xgboost as xgb
